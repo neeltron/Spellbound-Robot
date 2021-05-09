@@ -32,5 +32,5 @@ IN1 - D1, D2<br>
 IN2 - D3, D4<br>
 GND - GND<br>
 5V - 3V3<br>
-+ - 9V<br>
-- - GND
+`+` - 9V<br>
+`-` - GND
