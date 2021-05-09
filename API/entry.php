@@ -1,14 +1,18 @@
 <?php
 $val = $_GET['val'];
-$link = mysqli_connect('localhost', '********', '*******', '*********');
+$resp = "";
+$link = mysqli_connect('*****', '*******', '**********', '************');
 if (!$link) {
-  die("Connection failed!");
+  die("Connection failed: " . mysqli_connect_error());
 }
 $sql = "INSERT INTO spells (spell) VALUES ($val)";
 if (mysqli_query($link, $sql)) {
-  echo "Success";
+  $myObj->resp = $val;
+  header("location: https://spellrobo.netlify.app/");
 }
 else {
-  echo "Error";
+  $myObj->resp = "Error";
 }
+$myJSON = json_encode($myObj);
+echo $myJSON;
 ?>
